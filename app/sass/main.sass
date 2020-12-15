@@ -174,6 +174,7 @@
 	left: 0
 	background-color: $black
 	color: #ffffff
+	z-index: 1000
 
 	a
 		color: #ffffff
@@ -374,6 +375,9 @@
 		text-align: right
 		margin-bottom: 35px
 
+	&__wrap
+		position: relative
+
 	&__list
 		display: flex
 		justify-content: flex-end
@@ -390,17 +394,46 @@
 			&:hover
 				background-color: $black
 
+				.hero__list_text
+					opacity: 1
+
 			&:last-child
 				margin-right: 0
 
 		svg
 			margin-bottom: 30px
+			max-width: 50px
+			max-height: 50px
 
 		&_title
 			text-transform: uppercase
 			font-size: 24px
 			font-weight: 900
 			margin-bottom: 15px
+
+		&_text
+			+transition
+			opacity: 0
+
+	&__down
+		position: absolute
+		left: 0
+		bottom: 20%
+		a
+			color: #ffffff
+			
+		span
+			position: absolute
+			top: 0
+			left: 0
+			display: inline-block
+			transform: translate(-39px, -75px) rotate(-90deg)
+			white-space: nowrap
+
+
+.info
+	padding: 70px 0
+
 
 
 .footer

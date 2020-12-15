@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	//----------------------SCROLL-----------------------
 		const scrollTo = (scrollTo) => {
 			let list = document.querySelector(scrollTo);
-			list = '.' + list.classList[0]  + ' li a[href^="#"';
+			list = '.' + list.classList[0]  + ' a[href^="#"';
 	
 			document.querySelectorAll(list).forEach(link => {
 	
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				});
 			});
 		};
-		// scrollTo('.header__nav');
+		scrollTo('.click');
 	
 	//----------------------FIXED-HEADER-----------------------
 		const headerFixed = (headerFixed, headerActive) => {
