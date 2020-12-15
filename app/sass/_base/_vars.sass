@@ -1,0 +1,114 @@
+
+//----------------------fonts---------------------
+$fonts: 'Roboto', sans-serif
+//---------------------end-fonts---------------------
+
+//----------------------color---------------------
+$accent: #FFA703
+$black: #161B21
+$dark: #1e53a6
+$title: #f43ddb
+
+//---------------------end-color---------------------
+
+body
+	overflow-x: hidden
+	position: relative
+	min-width: 320px
+	font-family: $fonts
+	font-size: 16px
+	color: $black
+	line-height: 1.4
+	font-weight: 400
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+	+r(1200)
+		font-size: 14px
+
+::selection
+	background-color: $accent
+	color: #fff
+
+::placeholder
+	color: #666
+	
+h1, h2, h3, h4, h5, h6
+	font-weight: 700
+	line-height: 1.2
+	margin: 0
+	padding: 0
+
+ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+b, strong
+	font-weight: 700
+
+p
+	margin: 0
+	padding: 0
+
+a,
+button
+	+transition
+
+	&:focus,
+	&:hover,
+		outline: none
+		text-decoration: none
+		border: none
+		outline: none
+
+
+input, textarea, select
+	+transition
+	outline: none
+	box-shadow: none
+	border: 1px solid #000
+	// -webkit-appearance: none
+	
+	&:focus:required:invalid
+		border-color: red
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+
+	&:required:valid
+		border-color: green
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+
+	&::placeholder
+		color: $black
+
+
+label.error
+	position: absolute
+	bottom: -25px
+	right: 25px
+	left: 25px
+	transition: all .3s
+	animation: error .3s linear 1 forwards
+	color: #fff
+	text-align: center
+	font-weight: 600
+	background-color: red
+	border-radius: 10px
+	z-index: 1
+
+	&::before
+		content: ''
+		position: absolute
+		left: 50%
+		top: -8px
+		margin-left: -2px
+		border-bottom: 4px solid red
+		border-left: 4px solid transparent
+		border-right: 4px solid transparent
+		border-top: 4px solid transparent
