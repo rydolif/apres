@@ -4,7 +4,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Oszczędzaj i zadbaj o środowisko z instalacją fotowoltaiczną</title>
+	<title>O nas</title>
 	<meta name="description" content="Startup HTML Optimized">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" href="img/favicon.svg">
@@ -54,7 +54,7 @@
 								</a>
 							</div>
 							<a href="tel:+80123456789" class="header__nav_tel"><b>+80123456789</b></a>
-							<a href="#" class="btn modal--next">Skontaktuj się z nami</a>
+							<a href="#" class="btn modal--next">Skontaktuj się z nami </a>
 						</div>
 					</div>
 				</nav>
@@ -322,26 +322,69 @@
 				<span></span>
 			</button>
 	
-				<h3 class="form__title">Skontaktuj się z nami</h3>
+				<h3 class="form__title">Редактировать елемент 2</h3>
 
-				<input type="hidden" name="subject" value="Skontaktuj się z nami">
+				<input type="hidden" name="subject" value="Редактировать елемент">
 
 				<div class="form__item">
-					<input type="text" name="name" placeholder="Nazwa" class="form__input _req">
+					<label for="formName3" class="form__label">Имя*</label>
+					<input id="formName3" type="text" name="name" placeholder="Имя" class="form__input _req">
 				</div>
 
 				<div class="form__item">
-					<input type="tel" name="phone" placeholder="Telefon" class="form__input _req">
+					<label for="formPhone3" class="form__label">Телефон*</label>
+					<input id="formPhone3" type="tel" name="phone" placeholder="Телефон" class="form__input _req">
 				</div>
 
 				<div class="form__item">
-					<input type="email" name="mail" placeholder="Poczta" class="form__input _req">
+					<label for="formMail3">Почта*</label>
+					<input id="formMail3" type="email" name="mail" placeholder="Почта" class="form__input _req">
 				</div> 
+
+				<div class="form__item">
+					<div class="form__label">Левша или правша?</div>
+					<div class="form__options">
+						<div class="form__options_item">
+							<input id="formRigth3" type="radio" value="raight" name="hand" class=" form__options_input" checked>
+							<label for="formRigth3" class="form__options_label"><span>Правша</span></label>
+						</div>
+						<div class="form__options_item">
+							<input id="formLeft3" type="radio" value="left" name="hand" class="form__options_input">
+							<label for="formLeft3" class="form__options_label"><span>Левша</span></label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form__item">
+					<label for="formMessage3" class="form__label">Сообщение</label>
+					<textarea id="formMessage3" name="message" class="form__textarea"></textarea>
+				</div>
+
+				<div class="form__item">
+					<div class="form__label">Возраст:</div>
+					<select name="age" id="formAge3" class="form__select">
+						<option value="18" selected="selected">18</option>
+						<option value="25">25</option>
+						<option value="30">30</option>
+						<option value="50">50</option>
+					</select>
+				</div>
+
+				<div class="form__item">
+					<div class="form__label">Прикрепить фото:</div>
+					<div class="form__file formImgFile">
+						<div class="form__file_item">
+							<input accept=".jpg, .png, .gif, .ico" type="file" name="image" class="formImage form__file_input">
+							<label class="formLebel form__file_button btn">Выбрать</label>
+						</div>
+						<div id="formPreview" class="formPreview form__file_preview"></div>
+					</div>
+				</div>
 
 				<div class="form__item">
 					<div class="form__checkbox">
 						<input id="formAgreement3" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
-						<label for="formAgreement3" class="form__checkbox_label"><span>Wyrażam zgodę na  <a href="#">przetwarzanie danych osobowych</a></span></label>
+						<label for="formAgreement3" class="form__checkbox_label"><span>Персональные данные <a href="#">Файл</a></span></label>
 					</div>
 				</div>
 

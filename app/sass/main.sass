@@ -184,6 +184,11 @@
 			display: none
 
 
+.h2
+	text-transform: uppercase
+	font-size: 36px
+
+
 .header
 	position: fixed
 	top: 0
@@ -208,6 +213,8 @@
 		width: 175px
 		margin-right: 10%
 		flex-shrink: 0
+		z-index: 1000
+		background-color: $black
 
 		+r(1200)
 			width: 140px
@@ -240,6 +247,7 @@
 			opacity: 0
 
 			&::before
+				+transition
 				content: ''
 				position: absolute
 				top: 0
@@ -247,6 +255,7 @@
 				width: 100%
 				max-width: 320px
 				height: 70px
+				margin-right: -250px
 				background-color: $black
 				z-index: 1
 
@@ -272,6 +281,7 @@
 				padding: 100px 40px 40px 40px
 				background-color: $black
 				overflow: auto
+				box-shadow: 0 0 10px 0 rgba(#fff, .2)
 
 			+r(480)
 				max-width: 280px
@@ -314,6 +324,7 @@
 				background-color: $black
 				flex-direction: column
 				min-height: fit-content
+				width: 100%
 
 		&_soc
 			display: flex
@@ -374,12 +385,16 @@
 			visibility: visible
 			opacity: 1
 
+			&::before
+				margin-right: 0px
+
 			.header__nav_wrap
 				margin-right: 0
 
 
 .main
 	padding-top: 70px
+	background-color: $bg
 
 	+r(1200)
 		padding-top: 59px
@@ -532,6 +547,144 @@
 	padding: 70px 0
 
 
+.project
+	padding: 60px 0 100px
+
+	+r(767)
+		padding: 40px 0
+
+	&__title
+		text-align: center
+		margin-bottom: 80px
+
+		+r(1200)
+			margin-bottom: 50px
+
+	&__list
+		position: relative
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+
+		+r(767)
+			align-items: flex-end
+
+		&::before
+			content: ''
+			position: absolute
+			left: 50%
+			transform: translate(-50%, 0)
+			display: block
+			width: 2px
+			height: 100%
+			background-color: #CFDAE4
+
+			+r(767)
+				left: calc(100% - 40px)
+
+			+r(576)
+				left: calc(100% - 30px)
+				height: 80%
+
+	&__item
+		position: relative
+		margin-bottom: 35px
+		cursor: pointer
+
+		+r(1200)
+			margin-bottom: 25px
+
+		+r(767)
+			position: relative
+			display: flex
+			justify-content: space-between
+
+		&:hover
+			.project__item_text
+				margin-top: 0
+				opacity: 1
+				visibility: visible
+
+		&:last-child
+			margin-bottom: 0
+
+		&:nth-child(even)
+			.project__item_desc
+				left: calc(100% + 35px)
+				right: 0
+				text-align: left
+
+				+r(767)
+					left: auto
+					right: auto
+					text-align: right
+
+		&_img
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 100px
+			height: 100px
+			border-radius: 50%
+			background-color: #fff
+
+			+r(1200)
+				width: 80px
+				height: 80px
+
+			+r(576)
+				width: 60px
+				height: 60px
+
+			svg
+				max-width: 60%
+
+		&_desc
+			position: absolute
+			top: 45px
+			right: calc(100% + 35px)
+			width: 270px
+			text-align: right
+
+			+r(1200)
+				top: 35px
+
+			+r(767)
+				position: relative
+				top: 0
+				right: auto
+				width: calc(100% - 100px)
+
+			+r(576)
+				width: calc(100% - 70px)
+
+		&_title
+			font-size: 18px
+			font-weight: 700
+			margin-bottom: 12px
+			padding: 0 25px
+
+			+r(767)
+				font-size: 16px
+				margin-bottom: 7px
+
+		&_text
+			+transition
+			margin-top: 55px
+			padding: 10px 25px
+			background-color: #ffffff
+			box-shadow: 0px 4px 10px #CFDAE4
+			border-radius: 10px
+			opacity: 0
+			visibility: hidden
+
+			+r(767)
+				padding: 5px 10px
+				margin-top: 0
+				opacity: 1
+				visibility: visible
+
 
 .footer
 	background-color: $black
@@ -559,6 +712,8 @@
 		@extend .header__logo
 		width: 180px
 		margin-bottom: 20px
+		z-index: 1
+		display: inline-block
 
 		+r(1200)
 			width: 150px
@@ -599,9 +754,9 @@
 		&:last-child
 			margin-bottom: 0
 
-	a
-		color: #ffffff
-		@extend .link
+		a
+			color: #ffffff
+			@extend .link
 
 	&__form
 		margin-bottom: 30px
@@ -716,7 +871,7 @@
 		width: 100%
 		max-width: 600px
 		height: auto
-		padding: 40px 60px
+		padding: 30px 40px
 		border: 1px solid #8d8d8e
 		margin: auto
 		transform: translate(0, -150px)
@@ -767,7 +922,6 @@
 		margin-bottom: 15px
 
 	&__label
-		font-size: 16px
 		font-weight: 500
 		margin-bottom: 5px
 
@@ -791,6 +945,8 @@
 		font-weight: 600
 		background-color: red
 		border-radius: 10px
+		font-size: 12px
+		line-height: 130%
 		z-index: 1
 
 		&::before
@@ -829,7 +985,7 @@
 
 	&__item
 		position: relative
-		margin-bottom: 15px
+		margin-bottom: 25px
 
 	&__label
 		font-size: 16px
@@ -863,49 +1019,6 @@
 			box-shadow: 0 0 4px 0 rgba(red, 1)
 			border-color: red
 
-	&__options
-
-		&_label
-			position: relative
-			display: inline-flex
-			font-size: 16px
-			line-height: 140%
-			align-items: center
-
-			&::before
-				content: ''
-				align-self: start
-				flex: 0 0 24px
-				height: 24px
-				background-color: $dark
-				border-radius: 50%
-				margin-right: 10px
-
-			&::after
-				content: ''
-				position: absolute
-				top: 4px
-				left: 4px
-				width: 16px
-				height: 16px
-				border-radius: 50%
-				background-color: #fff
-				transform: scale(0)
-				+transition
-
-		&_input
-			display: none
-
-			&:checked + .form__options_label::after
-				transform: scale(1)
-
-	&__select
-		height: 50px
-		width: 100%
-		border-radius: 5px
-		font-size: 16px
-		padding: 0 15px
-
 	&__file
 
 		&_item
@@ -927,7 +1040,7 @@
 			border-radius: 30px
 			justify-content: center
 			align-items: center
-			background-color: $dark
+			background-color: $accent
 			color: #fff
 			padding: 0 15px
 			cursor: pointer
@@ -947,7 +1060,6 @@
 		&_label
 			position: relative
 			width: 100%
-			font-size: 16px
 			line-height: 140%
 			display: inline-flex
 			align-items: center
@@ -956,17 +1068,17 @@
 			&::before
 				content: ''
 				align-self: flex-start
-				flex: 0 0 24px
-				height: 24px
-				background-color: $dark
+				flex: 0 0 20px
+				height: 20px
+				background-color: $accent
 				border-radius: 4px
 				margin-right: 10px
 				+transition
 
 			&::after
 				content: ''
-				width: 16px
-				height: 16px
+				width: 12px
+				height: 12px
 				position: absolute
 				top: 4px
 				left: 4px
@@ -976,6 +1088,7 @@
 
 			a
 				color: $black
+				text-decoration: underline
 
 		&_input
 			display: none
@@ -987,31 +1100,7 @@
 		order: 1
 
 		&_button
-			width: 100%
-			display: flex
-			justify-content: center
-			align-items: center
-			min-height: 60px
-			background-color: $dark
-			color: #ffffff
-			font-size: 16px
-			font-weight: 700
-			cursor: pointer
-			border-radius: 20px
-			display: block
-			box-shadow: 0 0 5px 0 rgba($dark, .3)
-			border: 0
-			position: relative
-			top: 0
-			+transition
-
-			&:hover
-				background-color: $accent
-
-			&:active
-				background-color: $accent
-				top: 3px
-				box-shadow: 0 0 5px 0 rgba($dark, .2)
+			@extend .btn
 
 	&__error
 		position: absolute
@@ -1038,33 +1127,5 @@
 			border-right: 4px solid transparent
 			border-top: 4px solid transparent
 
-	&__nav
-
-		&_wrap
-			display: flex
-			flex-direction: column
-			margin-bottom: 20px
-
-		&_item
-			display: flex
-			margin-bottom: 10px
-
-		&_button
-			display: flex
-			flex-shrink: 0
-
-			a
-				display: flex
-				justify-content: center
-				align-items: center
-				width: 40px
-				height: 40px
-				border-radius: 50%
-				box-shadow: 0 0 5px 0 rgba(#000, .3)
-				padding: 0
-				margin-left: 10px
-
-			img
-				max-width: 50%
 
 
