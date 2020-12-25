@@ -184,12 +184,12 @@
 								<b id="schedulePrice">12 333 zł</b>
 							</p>
 							<p>
-								<span>Річне виробництво енергії: </span>
-								<b id="scheduleYear">2 208 kWh</b>
-							</p>
-							<p>
 								<span>Економія на рік: </span>
 								<b id="scheduleEoknomy">1 090 zł</b>
+							</p>
+							<p>
+								<span>Річне виробництво енергії: </span>
+								<b id="scheduleYear">2 208 kWh</b>
 							</p>
 							<p>
 								<span>Зниження викидів CO<sub>2</sub>: </span>
@@ -230,35 +230,7 @@
 							scheduleEoknomy.textContent = '7 487 zł';
 							schedulePayback.textContent = '16123,6';
 
-							let n = -59845;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 7487;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
-
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-59845, 7487);
 						}
 						else if (val == 650) {
 							let num = 92;
@@ -270,35 +242,7 @@
 							scheduleEoknomy.textContent = '7 155 zł';
 							schedulePayback.textContent = '15409,2';
 
-							let n = -57710;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 7155;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
-
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-57710, 7155);
 						}
 						else if (val == 600) {
 							let num = 83;
@@ -310,35 +254,7 @@
 							scheduleEoknomy.textContent = '6 539 zł';
 							schedulePayback.textContent = '14082,6';
 
-							let n = -53776;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 6539;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
-
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-53776, 6539);
 						}
 						else if (val == 550) {
 							let num = 75;
@@ -350,35 +266,7 @@
 							scheduleEoknomy.textContent = '5 876 zł';
 							schedulePayback.textContent = '12654';
 
-							let n = -47940;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 5876;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
-
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-47940, 5876);
 						}
 						else if (val == 500) {
 							let num = 67;
@@ -390,35 +278,7 @@
 							scheduleEoknomy.textContent = '5 402 zł';
 							schedulePayback.textContent = '11633,5';
 
-							let n = -44574;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 5402;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
-
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-44574, 5402);
 						}
 						else if (val == 450) {
 							let num = 60;
@@ -429,36 +289,8 @@
 							scheduleYear.textContent = '9 600 kWp';
 							scheduleEoknomy.textContent = '4 739 zł';
 							schedulePayback.textContent = '10204,8';
-							
-							let n = -40047;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 4739;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
 
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-40047, 4739);
 						}
 						else if (val == 400) {
 							let num = 50;
@@ -469,36 +301,8 @@
 							scheduleYear.textContent = '8 640 kWp';
 							scheduleEoknomy.textContent = '4 265 zł';
 							schedulePayback.textContent = '9184,3';
-							
-							let n = -36958;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 4265;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
 
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-36958, 4265);
 						}
 						else if (val == 350) {
 							let num = 40;
@@ -509,36 +313,8 @@
 							scheduleYear.textContent = '7 949 kWp';
 							scheduleEoknomy.textContent = '3 924 zł';
 							schedulePayback.textContent = '8449,6';
-							
-							let n = -34758;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 3924;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
 
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-34758, 3924);
 						}
 						else if (val == 300) {
 							let num = 32;
@@ -549,36 +325,8 @@
 							scheduleYear.textContent = '6 240 kWp';
 							scheduleEoknomy.textContent = '3 080 zł';
 							schedulePayback.textContent = '6633,1';
-							
-							let n = -27172;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 3080;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
 
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-27172, 3080);
 						}
 						else if (val == 250) {
 							let num = 24;
@@ -589,36 +337,8 @@
 							scheduleYear.textContent = '5 280 kWp';
 							scheduleEoknomy.textContent = '2 606 zł';
 							schedulePayback.textContent = '5612,6';
-							
-							let n = -24090;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 2606;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
 
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-24090, 2606);
 						}
 						else if (val == 200) {
 							let num = 18;
@@ -630,35 +350,7 @@
 							scheduleEoknomy.textContent = '2 132 zł';
 							schedulePayback.textContent = '4592,2';
 
-							let n = -22911;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 2132;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
-
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-22911, 2132);
 						}
 						else if (val == 150) {
 							let num = 11;
@@ -670,35 +362,7 @@
 							scheduleEoknomy.textContent = '1 635 zł';
 							schedulePayback.textContent = '3520,7';
 
-							let n = -17768;
-							let i = 0;
-							let arr = [];
-							while (i <= 22) {
-								let x = 1635;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
-
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-17768, 1635);
 						}
 						else if (val == 100) {
 							let num = 0;
@@ -710,70 +374,49 @@
 							scheduleEoknomy.textContent = '1 090 zł';
 							schedulePayback.textContent = '2347,1';
 
-							let n = -12333;
-							let i = 0;
-							const arr = [];
-							while (i <= 22) {
-								let x = 1090;
-								n = n + x;
-								arr[i] = n;
-								i++;
-							}
-							
-							var ctx = document.getElementById('myChart').getContext('2d');
-							var chart = new Chart(ctx, {
-									// The type of chart we want to create
-									type: 'bar',
-
-									// The data for our dataset
-									data: {
-											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-											datasets: [{
-													label: 'My First dataset',
-													backgroundColor: '#FFA703',
-													borderColor: '#FFA703',
-													data: arr
-											}]
-									},
-
-									// Configuration options go here
-									options: {}
-							});
+							chartFunc(-12333, 1090);
 						}
 
 					}
+					
+					const ctx = document.getElementById('myChart').getContext('2d');
+					const chartFunc = (chartFuncN, chartFuncX) => {
+						let n = chartFuncN;
+						let i = 0;
+						let arr = [];
+						while (i <= 15) {
+							let x = chartFuncX;
+							n = n + x;
+							arr[i] = n;
+							i++;
+						}
 
-					let n = -12333;
-					let i = 0;
-					let arr = [];
-					while (i <= 22) {
-						let x = 1090;
-						n = n + x;
-						arr[i] = n;
-						i++;
-					}
-					console.log(arr);
+						Chart.defaults.global.defaultFontSize = 22;
+						const chart = new Chart(ctx, {
+								// The type of chart we want to create
+								type: 'bar',
 
-											
-					var ctx = document.getElementById('myChart').getContext('2d');
-					var chart = new Chart(ctx, {
-							// The type of chart we want to create
-							type: 'bar',
+								// The data for our dataset
+								data: {
+										labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+										datasets: [{
+												label: 'My First dataset',
+												backgroundColor: '#FFA703',
+												borderColor: '#FFA703',
+												data: arr
+										}]
+								},
 
-							// The data for our dataset
-							data: {
-									labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
-									datasets: [{
-											label: 'My First dataset',
-											backgroundColor: '#FFA703',
-											borderColor: '#FFA703',
-											data: arr
-									}]
-							},
+								// Configuration options go here
+								options: {
+									legend: {
+										display: false,
+									},
+								}
+						});
+					};
+					chartFunc(-12333, 1090);
 
-							// Configuration options go here
-							options: {}
-					});
 
 				</script>
 				<div class="schedule__info"></div>
