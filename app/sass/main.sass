@@ -991,6 +991,223 @@
 			&:active
 				transform: scale(1.05)
 
+
+.about
+	margin-top: 70px
+	background-color: $bg
+
+	+r(1200)
+		margin-top: 59px
+
+	&__bunner
+		+cover
+		background-image: url(../img/about__bunner.png)
+		background-color: $black
+		padding: 195px 60px 25px
+
+		+r(1200)
+			padding: 140px 40px 25px
+
+		+r(992)
+			padding: 100px 30px 15px
+
+	&__title
+		color: #ffffff
+
+	&__desc
+		padding: 75px 0 35px
+
+		+r(1200)
+			padding: 55px 0 35px
+
+		+r(992)
+			padding: 35px 0 25px
+
+	&__list
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr
+		grid-gap: 20px
+		padding: 35px 0 50px
+
+		+r(1200)
+			padding: 15px 0 25px
+			grid-gap: 15px
+
+		+r(992)
+			grid-template-columns: 1fr 1fr
+
+		+r(767)
+			grid-template-columns: 1fr
+
+		p, svg, path, img
+			+transition
+
+		&_item
+			+transition
+			position: relative
+			background-color: $black
+
+			+r(767)
+				max-width: 360px
+				margin: 0 auto
+
+			&:hover
+				background-color: #ffffff
+
+				img
+					opacity: 0
+
+				svg, path
+					fill: $accent
+
+				.about__list_subtitle
+					color: $black
+					margin-bottom: 25px
+
+					+r(992)
+						margin-bottom: 15px
+
+					+r(576)
+						margin-bottom: 5px
+
+		&_img
+			width: 100%
+
+			img
+				width: 100%
+				object-fit: cover
+
+		&_content
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 100%
+			padding: 60px
+
+			+r(1200)
+				padding: 40px
+
+			+r(992)
+				padding: 30px
+
+			+r(767)
+				padding: 20px
+
+			+r(576)
+				padding: 15px
+
+			svg, path
+				display: block
+				margin: 0 auto 10px
+				max-width: 50px
+				max-height: 50px
+
+				+r(992)
+					max-width: 40px
+					max-height: 40px
+					margin-bottom: 5px
+
+				+r(576)
+					max-width: 30px
+					max-height: 30px
+
+		&_subtitle
+			text-align: center
+			color: #ffffff
+			font-size: 24px
+			font-weight: 700
+			text-transform: uppercase
+
+			+r(992)
+				font-size: 20px
+
+			+r(767)
+				font-size: 18px
+
+		&_text
+			overflow: hidden
+			height: 0
+
+			&--active
+				height: auto
+
+	&__slider
+		padding: 50px 0
+		background-color: $bg
+
+		+r(1200)
+			padding: 40px 0
+
+		+r(767)
+			padding: 30px 0
+
+		&_container
+			overflow: hidden
+
+		&_header
+			display: flex
+
+		&_subtitle
+			margin-bottom: 40px
+
+			+r(1200)
+				margin-bottom: 30px
+
+			+r(992)
+				margin-bottom: 20px
+
+		&_item
+			img
+				width: 100%
+
+		&_arrow
+			display: flex
+
+		&_prev,
+		&_next
+
+		&_prev
+
+		&_next
+
+		&_pagination
+			display: flex
+			justify-content: center
+			align-items: center
+			margin-top: 55px
+			height: 30px
+
+			+r(992)
+				margin-top: 30px
+				height: 20px
+
+			+r(576)
+				margin-top: 20px
+
+			span
+				+transition
+				width: 30px
+				height: 30px
+				border: 1px solid transparent
+				border-radius: 50%
+				background-color: #cfdae4
+				transform: scale(.333)
+				outline: none
+
+				+r(992)
+					height: 20px
+					width: 20px
+
+			.swiper-pagination-bullet-active
+				border-color: $black
+				transform: scale(1)
+				background-color: transparent
+
+
+
+
+
 .footer
 	background-color: $black
 	padding: 45px 0

@@ -3,29 +3,33 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 	//----------------------SLIDER-hero----------------------
-		// var mySwiper = new Swiper('.hero__slider', {
-		// 	slidesPerView: 1,
-		// 	spaceBetween: 30,
-		// 	loop: true,
-		// 	effect: 'fade',
-		// 	autoplay: {
-		// 		delay: 5000,
-		// 	},
-		// 	pagination: {
-		// 		el: '.hero__pagination',
-		// 		clickable: 'true',
-		// 	},
-		// 	navigation: {
-		// 		nextEl: '.hero__next',
-		// 		prevEl: '.hero__prev',
-		// 	},
-		// 	breakpoints: {
-		// 		320: {
-		// 			slidesPerView: 2,
-		// 			spaceBetween: 20
-		// 		},
-		// 	}
-		// });
+		var mySwiper = new Swiper('.about__slider_container', {
+			slidesPerView: 1,
+			spaceBetween: 15,
+			// loop: true,
+			// effect: 'fade',
+			autoplay: {
+				delay: 5000,
+			},
+			pagination: {
+				el: '.about__slider_pagination',
+				clickable: 'true',
+			},
+			navigation: {
+				nextEl: '.about__slider_next',
+				prevEl: '.about__slider_prev',
+			},
+			breakpoints: {
+				480: {
+					slidesPerView: 2,
+					spaceBetween: 15
+				},
+				767: {
+					slidesPerView: 3,
+					spaceBetween: 30
+				},
+			}
+		});
 
 	//------------------------------ACCORDIONS---------------------------
 		const accordions = (accordionSelector) => {
@@ -51,12 +55,37 @@ document.addEventListener("DOMContentLoaded", function() {
 							accordionContent.style.height = "0px"
 								item.classList.remove('accordion--active')
 					}
-
 				});
 			});
 
 		};
 		accordions('.accordion');
+
+	//------------------------------ACCORDIONS-HOVER--------------------------
+		const aboutList = (aboutListSelector) => {
+			const aboutListItem = document.querySelectorAll(aboutListSelector);
+			aboutListItem.forEach(item => {
+				const aboutListText = item.querySelector('.about__list_text');
+
+				item.addEventListener('mouseenter', (e) => { 
+					if(!item.classList.contains('about__list_text')) {
+						item.classList.add('about__list_text--active');
+						aboutListText.style.height = "auto"
+						var height = aboutListText.clientHeight + "px"
+						aboutListText.style.height = "0px"
+						setTimeout(() => {
+							aboutListText.style.height = height
+						}, 0)
+					}
+				});
+
+				item.addEventListener('mouseleave', (e) => {
+					item.classList.remove('about__list_item--active');
+					aboutListText.style.height = "0px"
+				});
+			});
+		};
+		aboutList('.about__list_item');
 
 	//----------------------SCROLL-----------------------
 		const scrollTo = (scrollTo) => {
