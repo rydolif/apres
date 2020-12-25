@@ -307,5 +307,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		};
 		forms('.form');
 
+
+
+
 });
 	

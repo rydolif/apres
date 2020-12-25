@@ -11,6 +11,7 @@
 	<meta property="og:image" content="img/preview.jpg">
 	<link rel="stylesheet" href="css/app.min.css?v=1">
 	<script src="js/app.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
 </head>
 
@@ -157,6 +158,627 @@
 	<section class="info" id="info">
 		<div class="container">
 			
+		</div>
+	</section>
+
+	<section class="schedule">
+		<div class="container">
+			
+			<div class="schedule__container">
+				<div class="schedule__slider">
+					<h2 class="schedule__title h2">Sprawdź ile możesz zaoszczędzić</h2>
+					<p class="schedule__subtitle"><b>Twój miesięczny rachunek za prąd</b></p>
+
+					<div class="schedule__calc">
+						<span class="schedule__calc_val">100 zł</span>
+						<input class="schedule__calc_step" type="range" id="r1" min="100" max="700" step="50" value="100" oninput="fun1()">
+						<input type="hidden" id="i1" value="100">
+						
+						<div class="schedule__info">
+							<p>
+								<span>Мощність установки: </span>
+								<b id="schedulePower">2,3 kWp</b>
+							</p>
+							<p>
+								<span>Оріентовочна ціна за установку: </span>
+								<b id="schedulePrice">12 333 zł</b>
+							</p>
+							<p>
+								<span>Річне виробництво енергії: </span>
+								<b id="scheduleYear">2 208 kWh</b>
+							</p>
+							<p>
+								<span>Економія на рік: </span>
+								<b id="scheduleEoknomy">1 090 zł</b>
+							</p>
+							<p>
+								<span>Зниження викидів CO<sub>2</sub>: </span>
+								<b id="schedulePayback">2347,1</b>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<canvas id="myChart" class="schedule__chart"></canvas>
+
+				<script>
+
+					//----------------------CALCULATIONS-----------------------
+					function fun1() {
+						let range = document.querySelector('.schedule__calc_step'); //range - это ползунок
+						let i1 = document.getElementById('i1'); // i1 - input
+						i1.value = range.value;
+
+						let val = range.value;
+
+						let scheduleInfo = document.querySelector('.schedule__calc_val');
+						scheduleInfo.textContent = val + ' zł';
+
+						let schedulePower = document.querySelector('#schedulePower');
+						let schedulePrice = document.querySelector('#schedulePrice');
+						let scheduleYear = document.querySelector('#scheduleYear');
+						let scheduleEoknomy = document.querySelector('#scheduleEoknomy');
+						let schedulePayback = document.querySelector('#schedulePayback');
+
+						if (val == 700) {
+							let num = 100;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '15,8 kWp';
+							schedulePrice.textContent = '59 845 zł';
+							scheduleYear.textContent = '15 168 kWp';
+							scheduleEoknomy.textContent = '7 487 zł';
+							schedulePayback.textContent = '16123,6';
+
+							let n = -59845;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 7487;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 650) {
+							let num = 92;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '15,1 kWp';
+							schedulePrice.textContent = '57 710 zł';
+							scheduleYear.textContent = '14 496 kWp';
+							scheduleEoknomy.textContent = '7 155 zł';
+							schedulePayback.textContent = '15409,2';
+
+							let n = -57710;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 7155;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 600) {
+							let num = 83;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '13,8 kWp';
+							schedulePrice.textContent = '53 776 zł';
+							scheduleYear.textContent = '13 248 kWp';
+							scheduleEoknomy.textContent = '6 539 zł';
+							schedulePayback.textContent = '14082,6';
+
+							let n = -53776;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 6539;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 550) {
+							let num = 75;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '12,4 kWp';
+							schedulePrice.textContent = '47 940 zł';
+							scheduleYear.textContent = '11 904 kWp';
+							scheduleEoknomy.textContent = '5 876 zł';
+							schedulePayback.textContent = '12654';
+
+							let n = -47940;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 5876;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 500) {
+							let num = 67;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '11,4 kWp';
+							schedulePrice.textContent = '44 574 zł';
+							scheduleYear.textContent = '10 944 kWp';
+							scheduleEoknomy.textContent = '5 402 zł';
+							schedulePayback.textContent = '11633,5';
+
+							let n = -44574;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 5402;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 450) {
+							let num = 60;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '10 kWp';
+							schedulePrice.textContent = '40 047 zł';
+							scheduleYear.textContent = '9 600 kWp';
+							scheduleEoknomy.textContent = '4 739 zł';
+							schedulePayback.textContent = '10204,8';
+							
+							let n = -40047;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 4739;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 400) {
+							let num = 50;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '9 kWp';
+							schedulePrice.textContent = '36 958 zł';
+							scheduleYear.textContent = '8 640 kWp';
+							scheduleEoknomy.textContent = '4 265 zł';
+							schedulePayback.textContent = '9184,3';
+							
+							let n = -36958;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 4265;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 350) {
+							let num = 40;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '8,28 kWp';
+							schedulePrice.textContent = '34 758 zł';
+							scheduleYear.textContent = '7 949 kWp';
+							scheduleEoknomy.textContent = '3 924 zł';
+							schedulePayback.textContent = '8449,6';
+							
+							let n = -34758;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 3924;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 300) {
+							let num = 32;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '6,5 kWp';
+							schedulePrice.textContent = '27 172 zł';
+							scheduleYear.textContent = '6 240 kWp';
+							scheduleEoknomy.textContent = '3 080 zł';
+							schedulePayback.textContent = '6633,1';
+							
+							let n = -27172;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 3080;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 250) {
+							let num = 24;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '5,5 kWp';
+							schedulePrice.textContent = '24 090 zł';
+							scheduleYear.textContent = '5 280 kWp';
+							scheduleEoknomy.textContent = '2 606 zł';
+							schedulePayback.textContent = '5612,6';
+							
+							let n = -24090;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 2606;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 200) {
+							let num = 18;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '4,5 kWp';
+							schedulePrice.textContent = '22 911 zł';
+							scheduleYear.textContent = '4 320 kWp';
+							scheduleEoknomy.textContent = '2 132 zł';
+							schedulePayback.textContent = '4592,2';
+
+							let n = -22911;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 2132;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 150) {
+							let num = 11;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '3,45 kWp';
+							schedulePrice.textContent = '17 768 zł';
+							scheduleYear.textContent = '3 312 kWp';
+							scheduleEoknomy.textContent = '1 635 zł';
+							schedulePayback.textContent = '3520,7';
+
+							let n = -17768;
+							let i = 0;
+							let arr = [];
+							while (i <= 22) {
+								let x = 1635;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+						else if (val == 100) {
+							let num = 0;
+							range.style.background = 'linear-gradient(to right,  #FFA703 0%,  #FFA703 '+num+'%, #CFDAE4 '+num+'%, #CFDAE4 100%)';
+							scheduleInfo.style.left = num + '%';
+							schedulePower.textContent = '2,3 kWp';
+							schedulePrice.textContent = '12 333 zł';
+							scheduleYear.textContent = '2 208 kWp';
+							scheduleEoknomy.textContent = '1 090 zł';
+							schedulePayback.textContent = '2347,1';
+
+							let n = -12333;
+							let i = 0;
+							const arr = [];
+							while (i <= 22) {
+								let x = 1090;
+								n = n + x;
+								arr[i] = n;
+								i++;
+							}
+							
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var chart = new Chart(ctx, {
+									// The type of chart we want to create
+									type: 'bar',
+
+									// The data for our dataset
+									data: {
+											labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+											datasets: [{
+													label: 'My First dataset',
+													backgroundColor: '#FFA703',
+													borderColor: '#FFA703',
+													data: arr
+											}]
+									},
+
+									// Configuration options go here
+									options: {}
+							});
+						}
+
+					}
+
+					let n = -12333;
+					let i = 0;
+					let arr = [];
+					while (i <= 22) {
+						let x = 1090;
+						n = n + x;
+						arr[i] = n;
+						i++;
+					}
+					console.log(arr);
+
+											
+					var ctx = document.getElementById('myChart').getContext('2d');
+					var chart = new Chart(ctx, {
+							// The type of chart we want to create
+							type: 'bar',
+
+							// The data for our dataset
+							data: {
+									labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22'],
+									datasets: [{
+											label: 'My First dataset',
+											backgroundColor: '#FFA703',
+											borderColor: '#FFA703',
+											data: arr
+									}]
+							},
+
+							// Configuration options go here
+							options: {}
+					});
+
+				</script>
+				<div class="schedule__info"></div>
+			</div>
+
 		</div>
 	</section>
 
