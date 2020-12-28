@@ -246,7 +246,10 @@
 					</div>
 				</div>
 
-				<canvas id="myChart" class="schedule__chart"></canvas>
+				<div class="schedule__chart">
+					<canvas id="myChart" height="200"></canvas>
+				</div>
+
 
 				<script>
 
@@ -431,23 +434,23 @@
 						let n = chartFuncN;
 						let i = 0;
 						let arr = [];
-						while (i <= 15) {
+						while (i <= 20) {
 							let x = chartFuncX;
 							n = n + x;
 							arr[i] = n;
 							i++;
 						}
 
-						Chart.defaults.global.defaultFontSize = 22;
+						Chart.defaults.global.defaultFontSize = 12;
 						const chart = new Chart(ctx, {
 								// The type of chart we want to create
 								type: 'bar',
 
 								// The data for our dataset
 								data: {
-										labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+										labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
 										datasets: [{
-												label: 'My First dataset',
+												label: 'Rok',
 												backgroundColor: '#FFA703',
 												borderColor: '#FFA703',
 												data: arr
