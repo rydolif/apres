@@ -556,8 +556,207 @@
 
 
 .info
-	padding: 70px 0
+	padding: 200px 0 70px
 	background-color: $bg
+
+	+r(1200)
+		padding-top: 140px
+		padding-bottom: 40px
+
+	+r(767)
+		padding-top: 40px
+
+	&__container
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+
+		+r(1200)
+			overflow: hidden
+
+	&__title
+		margin-bottom: 40px
+
+		+r(1200)
+			margin-bottom: 20px
+
+	&__content
+		width: 31%
+
+		+r(1200)
+			width: 38%
+
+		+r(992)
+			width: 100%
+			margin-bottom: 20px
+
+		p
+			margin-bottom: 20px
+
+			+r(1200)
+				margin-bottom: 10px
+
+			+r(576)
+				margin-bottom: 5px
+
+	&__img
+		position: relative
+		width: 60%
+
+		+r(992)
+			width: 100%
+			max-width: 576px
+			margin: 0 auto
+
+		+r(480)
+			display: flex
+			justify-content: center
+			align-items: center
+
+
+		img
+			width: 100%
+
+			+r(480)
+				min-width: 440px
+				margin: 0 auto
+
+		&_step
+			position: absolute
+			z-index: 1
+			cursor: pointer
+
+			&:hover
+				.info__img_text
+					top: 0
+					visibility: visible
+					opacity: 1
+
+					+r(1440)
+						top: auto
+						bottom: 0
+
+					+r(767)
+						bottom: 105%
+
+					+r(480)
+						.info__img_text
+							bottom: 105%
+
+			&--one
+				top: 24%
+				right: 32%
+
+				+r(576)
+					.info__img_text
+						bottom: 108%
+						width: 200px
+						padding: 5px
+						font-size: 12px
+						right: auto
+						left: 0
+						transform: translate(-70%, 0)
+						visibility: visible
+						opacity: 1
+
+			&--two
+				top: 46%
+				right: 39%
+
+				+r(576)
+					top: 49%
+
+					.info__img_text
+						bottom: 100% !important
+						width: 220px
+						padding: 5px
+						font-size: 12px
+						right: -30px !important
+						left: auto
+						transform: translate(0, 0)
+						visibility: visible
+						opacity: 1
+
+			&--three
+				top: 54%
+				right: 56%
+
+				+r(576)
+					top: 56%
+
+					.info__img_text
+						bottom: auto !important
+						top: 108% !important
+						width: 220px
+						padding: 5px
+						font-size: 12px
+						right: auto
+						left: -15px
+						transform: translate(0, 0)
+						visibility: visible
+						opacity: 1
+
+		&_num
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 44px
+			height: 44px
+			border-radius: 50%
+			background-color: $accent
+			color: #fff
+			font-size: 24px
+			font-weight: 700
+
+			+r(1200)
+				width: 34px
+				height: 34px
+				font-size: 18px
+
+			+r(576)
+				width: 24px
+				height: 24px
+				font-size: 14px
+
+		&_text
+			+transition
+			position: absolute
+			left: 55px
+			top: 15px
+			background-color: #fff
+			padding: 20px 25px
+			width: 330px
+			box-shadow: 0px 4px 10px #CFDAE4
+			border-radius: 10px
+			visibility: hidden
+			opacity: 0
+			font-size: 14px
+			z-index: 100
+
+			+r(1555)
+				width: 275px
+				padding: 15px
+
+			+r(1440)
+				top: auto
+				left: auto
+				right: 105%
+				bottom: -15px
+
+			+r(1200)
+				padding: 10px
+
+			+r(767)
+				bottom: 50%
+				width: 200px
+				padding: 5px
+				font-size: 12px
+				right: auto
+				left: 0
+				transform: translate(-70%, 0)
+
+
 
 
 .project
@@ -1298,7 +1497,7 @@
 
 	&__chart
 		width: 50% !important
-		height: 400px !important
+		height: 450px !important
 
 		+r(1440)
 			height: 350px !important
