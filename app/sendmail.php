@@ -14,7 +14,7 @@
 
 	//От каго письмо
 	$mail->setFrom('rudolifrudolif@gmail.com', 'Стартовый макет');
-	//Кому отправить
+	//Кому Wyślij
 	$mail->addAddress('rudolifrudolif@gmail.com');
 	//Тема письма
 	$mail->Subject = ('Привет это тест отправки формы');
