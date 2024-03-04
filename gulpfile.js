@@ -43,7 +43,7 @@ let paths = {
 // LOGIC
 
 const { src, dest, parallel, series, watch } = require('gulp');
-const sass         = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const scss         = require('gulp-sass');
 const less         = require('gulp-less');
 const styl         = require('gulp-stylus');

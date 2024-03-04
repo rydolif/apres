@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				function formAddError(input) {
 					let div = document.createElement('div');
 					div.classList.add("form__error");
-					div.innerHTML = "Введите данные в поле";
+					div.innerHTML = "Wprowadź dane w polu";
 
 					input.parentElement.append(div);
 					input.parentElement.classList.add('_error');
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				function formAddErrorEmail(input) {
 					let div = document.createElement('div');
 					div.classList.add("form__error");
-					div.innerHTML = "Введите свою почту";
+					div.innerHTML = "Wprowadź swój email";
 
 					input.parentElement.append(div);
 					input.parentElement.classList.add('_error');
@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				function formAddErrorCheck(input) {
 					let div = document.createElement('div');
 					div.classList.add("form__error");
-					div.innerHTML = "Согласие на обработку персональных данных";
+					div.innerHTML = "Zgoda na przetwarzanie danych osobowych";
 
 					input.parentElement.append(div);
 					input.parentElement.classList.add('_error');
