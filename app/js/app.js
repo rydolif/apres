@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function() {
 							item.reset();
 							item.classList.remove('_sending');
 						} else {
-							alert('Ошибка при отправке');
+							alert('Błąd podczas wysyłania');
 							item.classList.remove('_sending');
 						}
 			
@@ -269,6 +269,14 @@ document.addEventListener("DOMContentLoaded", function() {
 					return error;
 				}
 
+				function formErorrRemove() {
+					let formErorrRemove = document.querySelectorAll('.form__error')
+					console.log('error')
+					formErorrRemove.forEach(item => {
+						item.remove();
+					})
+				}
+
 				function formAddError(input) {
 					let div = document.createElement('div');
 					div.classList.add("form__error");
@@ -277,6 +285,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					input.parentElement.append(div);
 					input.parentElement.classList.add('_error');
 					input.classList.add('_error');
+					setTimeout(formErorrRemove, 2000)
 				}
 			
 				function formAddErrorEmail(input) {
@@ -287,6 +296,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					input.parentElement.append(div);
 					input.parentElement.classList.add('_error');
 					input.classList.add('_error');
+					setTimeout(formErorrRemove, 2000)
 				}
 			
 				function formAddErrorCheck(input) {
@@ -297,6 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					input.parentElement.append(div);
 					input.parentElement.classList.add('_error');
 					input.classList.add('_error');
+					setTimeout(formErorrRemove, 2000)
 				}
 			
 				function emailTest(input) {
